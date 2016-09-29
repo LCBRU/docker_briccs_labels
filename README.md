@@ -15,6 +15,6 @@ To **connect** to container :
   * sudo docker ps -a
   * sudo docker exec -i -t [CONTAINER ID] /bin/bash
 
-admin:ldii0AylInTN
+The tomcat user and login details are in the docker logs
 
-admin:9JPxu4bSxPrD
+sudo docker logs [CONTAINER ID]
