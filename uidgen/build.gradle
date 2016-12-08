@@ -1,0 +1,20 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile (
+    	[group: 'org.hibernate', name: 'hibernate-core', version: '3.2.6.GA'],
+    	[group: 'org.hibernate', name: 'hibernate-annotations', version: '3.3.1.GA'],
+    	[group: 'org.hibernate.common', name: 'hibernate-commons-annotations', version: '3.3.0.GA'],
+    	[group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.5.8'],
+    	[group: 'log4j', name: 'log4j', version: '1.2.14'],
+    	[group: 'hsqldb', name: 'hsqldb', version: '1.8.0.7'],
+    	[group: 'mysql', name: 'mysql-connector-java', version: '5.1.12'],
+    	[group: 'com.mchange', name: 'c3p0', version: '0.9.1'],
+    	[group: 'junit', name: 'junit', version: '4.6']
+    	)
+}
+

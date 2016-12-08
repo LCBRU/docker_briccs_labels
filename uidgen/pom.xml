@@ -1,0 +1,146 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.bru.briccs</groupId>
+  <artifactId>briccs-uidgen</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0.1-SNAPSHOT</version>
+  <name>briccs-uidgen</name>
+  <description>Service to generate unique ids</description>
+  
+	<!--+
+	    | The distributionManagement element is required for deploying an artifact to a remote repository
+	    +-->
+	<distributionManagement>
+		<repository>
+			<id>mvn.briccs.org.uk</id>
+			<name>BRICCS Maven Repository</name>
+			<url>scpexe://mvn.briccs.org.uk/var/local/briccs/maven/repo</url>
+		</repository>
+	</distributionManagement>
+
+  <dependencies>
+   
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-annotations</artifactId>
+      <version>${hibernate-annotations.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-commons-annotations</artifactId>
+      <version>${hibernate-commons-annotations.version}</version>
+    </dependency>
+    
+    <dependency>
+   		<groupId>org.slf4j</groupId>
+   		<artifactId>slf4j-log4j12</artifactId>
+   		<version>1.5.8</version>
+   		<!-- scope>test</scope -->
+	</dependency>
+	
+	<dependency>
+   		<groupId>log4j</groupId>
+   		<artifactId>log4j</artifactId>
+   		<version>1.2.14</version>
+   		<!-- scope>test</scope -->
+	</dependency>
+    
+     <dependency>
+        <groupId>hsqldb</groupId>
+        <artifactId>hsqldb</artifactId>
+        <version>${hsqldb.version}</version>
+        <scope>test</scope>
+     </dependency>
+     
+     <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql-connector-java.version}</version>
+     </dependency>
+
+	<dependency>
+		<groupId>c3p0</groupId>
+		<artifactId>c3p0</artifactId>
+		<version>0.9.1</version>
+	</dependency>
+       
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.6</version>
+      <scope>test</scope>
+    </dependency>
+    
+  </dependencies>
+  
+  <properties>
+    <hibernate-search.version>3.0.1.GA</hibernate-search.version>
+    <hibernate-annotations.version>3.3.1.GA</hibernate-annotations.version>
+    <hibernate.version>3.2.6.ga</hibernate.version>
+    <hibernate-commons-annotations.version>3.3.0.ga</hibernate-commons-annotations.version>
+    <hsqldb.version>1.8.0.7</hsqldb.version>
+    <mysql-connector-java.version>5.1.12</mysql-connector-java.version>
+  </properties>
+  
+  <build>
+  <plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+
+		</plugins>
+   
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
+  </build>
+  
+  <repositories>
+	
+		<repository>
+			<id>mvn.briccs.org.uk</id>
+			<name>BRICCS Maven Repository</name>
+			<url>http://mvn.briccs.org.uk/</url>
+		</repository>
+	
+		<repository>
+			<id>org.obiba.maven2</id>
+			<name>OBIBA Repo</name>
+			<url>http://maven.obiba.org/maven2</url>
+		</repository>
+		
+		<repository>
+			<id>com.springsource.repository.bundles.release</id>
+			<name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/release</url>
+		</repository>
+		
+		<repository>
+			<id>com.springsource.repository.bundles.external</id>
+			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/external</url>
+		</repository>
+
+		<repository>
+			<id>mirrors.ibiblio.org</id>
+			<name>Ibiblio Repository</name>
+			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
+		</repository>
+		
+	</repositories>
+  
+</project>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+          
+<hibernate-mapping>
+
+	<class name="org.bru.briccs.uidgen.IdRange" table="IdRanges">
+	
+		<id name="pk" type="string" column="pk">
+			<generator class="uuid"/>
+		</id>
+		
+		<property name="prefix" type="string" ></property>
+		<property name="fromValue" type="long" ></property>
+		<property name="toValue" type="long" ></property>
+		<property name="status" type="string" ></property>
+				
+	</class>
+
+</hibernate-mapping>
