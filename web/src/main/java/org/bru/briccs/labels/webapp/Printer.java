@@ -236,7 +236,7 @@ public class Printer {
 		
 		private static String getHostName( String key, ResourceBundle config ) {
 			try {
-				return config.getString( SAMPLE_PRINTER_HOSTNAME ) ;
+				return config.getString( key ) ;
 			}
 			catch( MissingResourceException mrx ) {
 				return null ;
