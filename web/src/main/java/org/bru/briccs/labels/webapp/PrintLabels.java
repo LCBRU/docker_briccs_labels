@@ -128,6 +128,10 @@ public class PrintLabels {
 		String message = null ;
 		synchronized( PrintLabels.class ) {
 			try {
+				( Printer.Factory.newSerumBagPrinter("MERMAID 1", "Ideally before surgery, but within 24hrs") ).print() ;
+				( Printer.Factory.newCitrateBagPrinter("MERMAID 1", "Ideally before surgery, but within 24hrs") ).print() ;
+				( Printer.Factory.newUrineBagPrinter("MERMAID 1", "Ideally before surgery, but within 24hrs") ).print() ;
+/*
 				for (int i = 1; i < 4; i++) {
 					String labelInfor = String.format("MERMAID 1 Visit %d", i);
 					( Printer.Factory.newSerumBagPrinter(labelInfor) ).print() ;
@@ -135,6 +139,7 @@ public class PrintLabels {
 					( Printer.Factory.newUrineBagPrinter(labelInfor) ).print() ;
 					( Printer.Factory.newSamplePrinter() ).print() ;
 				}
+*/
 				message = "Ready!" ;
 			}
 			catch (PrintException lpx ){ 

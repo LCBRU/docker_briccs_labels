@@ -2,11 +2,11 @@
 
 To **build** the image :
 
-  * sudo docker build -t lcbruit/briccs_label:v1.1 .
+  * sudo docker build -t lcbruit/briccs_label:v1.3 .
  
 To **run** the docker container :
  
-  * sudo docker run -itd -p 8080:8080 lcbruit/briccs_label:v1.1
+  * sudo docker run -d -p 8080:8080 lcbruit/briccs_label:v1.3
   
 Ensure that the **version number** matches the actual redcap version you are upgrading to.
 

@@ -180,10 +180,11 @@ public class Printer {
 			return new Printer( ipAddress, barcodeTemplate, Pattern.Sample, batchSize ) ;
 		}
 		
-		public static Printer newSerumBagPrinter(String study_name) throws PrintException {
+		public static Printer newSerumBagPrinter(String study_name, String study_sub) throws PrintException {
 			ResourceBundle config = ResourceBundle.getBundle( Printer.class.getCanonicalName() ) ;			
 			String pathTemplate = config.getString( BAG_SERUM_LABEL ) ;
 			String barcodeTemplate = buildBarcodeTemplate( pathTemplate ) ;
+     		barcodeTemplate = barcodeTemplate.replace("{STUDY_SUB_PLACEHOLDER}", study_sub);
      		barcodeTemplate = barcodeTemplate.replace("{STUDY_PLACEHOLDER}", study_name);
 			String hostname = getHostName( BAG_PRINTER_HOSTNAME, config ) ;
 			if( hostname != null ) {
@@ -198,10 +199,11 @@ public class Printer {
 			return new Printer( ipAddress, barcodeTemplate, Pattern.Participant, BAG_BATCH_SIZE ) ;
 		}
 		
-		public static Printer newCitrateBagPrinter(String study_name) throws PrintException {
+		public static Printer newCitrateBagPrinter(String study_name, String study_sub) throws PrintException {
 			ResourceBundle config = ResourceBundle.getBundle( Printer.class.getCanonicalName() ) ;			
 			String pathTemplate = config.getString( BAG_CITRATE_LABEL ) ;
 			String barcodeTemplate = buildBarcodeTemplate( pathTemplate ) ;
+     		barcodeTemplate = barcodeTemplate.replace("{STUDY_SUB_PLACEHOLDER}", study_sub);
      		barcodeTemplate = barcodeTemplate.replace("{STUDY_PLACEHOLDER}", study_name);
 			String hostname = getHostName( BAG_PRINTER_HOSTNAME, config ) ;
 			if( hostname != null ) {
@@ -216,10 +218,11 @@ public class Printer {
 			return new Printer( ipAddress, barcodeTemplate, Pattern.Participant, BAG_BATCH_SIZE ) ;
 		}
 		
-		public static Printer newUrineBagPrinter(String study_name) throws PrintException {
+		public static Printer newUrineBagPrinter(String study_name, String study_sub) throws PrintException {
 			ResourceBundle config = ResourceBundle.getBundle( Printer.class.getCanonicalName() ) ;			
 			String pathTemplate = config.getString( BAG_URINE_LABEL ) ;
 			String barcodeTemplate = buildBarcodeTemplate( pathTemplate ) ;
+     		barcodeTemplate = barcodeTemplate.replace("{STUDY_SUB_PLACEHOLDER}", study_sub);
      		barcodeTemplate = barcodeTemplate.replace("{STUDY_PLACEHOLDER}", study_name);
 			String hostname = getHostName( BAG_PRINTER_HOSTNAME, config ) ;
 			if( hostname != null ) {
