@@ -14,7 +14,8 @@
 		
 		<!-- MySql Database connection settings: -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://10.156.254.206/briccsids</property>
+		<!-- <property name="connection.url">jdbc:mysql://10.156.254.206/briccsids</property> -->
+		<property name="connection.url">jdbc:mysql://10.156.254.205/briccsids</property>
 		<property name="connection.username">briccs_label</property>
 		<property name="connection.password">br1cc5</property>
 		
