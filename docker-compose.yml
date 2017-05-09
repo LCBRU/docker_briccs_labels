@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  briccs_labels:
+    restart: always
+    build: ./briccs_labels
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./app.env
