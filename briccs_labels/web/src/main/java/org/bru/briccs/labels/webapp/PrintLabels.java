@@ -72,7 +72,7 @@ public class PrintLabels {
 		synchronized( PrintLabels.class ) {
 			try {
 				( Printer.Factory.newBagPrinter() ).print() ;
-				( Printer.Factory.newSamplePrinter() ).print() ;
+				( Printer.Factory.newSamplePrinter(8) ).print() ;
 				message = "Ready!" ;
 			}
 			catch (PrintException lpx ){ 
@@ -86,7 +86,7 @@ public class PrintLabels {
 		String message = null ;
 		synchronized( PrintLabels.class ) {
 			try {
-				( Printer.Factory.newSamplePrinter() ).print() ;
+				( Printer.Factory.newSamplePrinter(8) ).print() ;
 				message = "Ready!" ;
 			}
 			catch (PrintException lpx ){ 
@@ -128,18 +128,11 @@ public class PrintLabels {
 		String message = null ;
 		synchronized( PrintLabels.class ) {
 			try {
-				( Printer.Factory.newSerumBagPrinter("MERMAID 1", "Ideally before surgery, but within 24hrs") ).print() ;
-				( Printer.Factory.newCitrateBagPrinter("MERMAID 1", "Ideally before surgery, but within 24hrs") ).print() ;
-				( Printer.Factory.newUrineBagPrinter("MERMAID 1", "Ideally before surgery, but within 24hrs") ).print() ;
-/*
-				for (int i = 1; i < 4; i++) {
-					String labelInfor = String.format("MERMAID 1 Visit %d", i);
-					( Printer.Factory.newSerumBagPrinter(labelInfor) ).print() ;
-					( Printer.Factory.newCitrateBagPrinter(labelInfor) ).print() ;
-					( Printer.Factory.newUrineBagPrinter(labelInfor) ).print() ;
-					( Printer.Factory.newSamplePrinter() ).print() ;
-				}
-*/
+				( Printer.Factory.newSerumBagPrinter("MERMAID 1", "") ).print() ;
+				( Printer.Factory.newCitrateBagPrinter("MERMAID 1", "") ).print() ;
+				( Printer.Factory.newUrineBagPrinter("MERMAID 1", "") ).print() ;
+                ( Printer.Factory.newSamplePrinter(10) ).print() ;
+
 				message = "Ready!" ;
 			}
 			catch (PrintException lpx ){ 

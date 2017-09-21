@@ -162,22 +162,21 @@ public class Printer {
 			return new Printer( ipAddress, barcodeTemplate, Pattern.Participant, BAG_BATCH_SIZE ) ;
 		}
 		
-		public static Printer newSamplePrinter() throws PrintException {
+		public static Printer newSamplePrinter(int batch_size) throws PrintException {
 			ResourceBundle config = ResourceBundle.getBundle( Printer.class.getCanonicalName() ) ;
 			String pathTemplate = config.getString( SAMPLE_TEMPLATE_FILE ) ;
 			String barcodeTemplate = buildBarcodeTemplate( pathTemplate ) ;
-			int batchSize = formatSampleBatchSize( config ) ;
 			String hostname = getHostName( SAMPLE_PRINTER_HOSTNAME, config ) ;
 			if( hostname != null ) {
 				try {
-					return new Printer( InetAddress.getByName( hostname ), barcodeTemplate, Pattern.Participant, batchSize ) ;
+					return new Printer( InetAddress.getByName( hostname ), barcodeTemplate, Pattern.Participant, batch_size ) ;
 				}
 				catch( UnknownHostException uhx ) {
 					throw new PrintException( uhx.getLocalizedMessage() ) ;
 				}				
 			}
 			String ipAddress = config.getString( SAMPLE_PRINTER_IPADDRESS ) ;
-			return new Printer( ipAddress, barcodeTemplate, Pattern.Sample, batchSize ) ;
+			return new Printer( ipAddress, barcodeTemplate, Pattern.Sample, batch_size ) ;
 		}
 		
 		public static Printer newSerumBagPrinter(String study_name, String study_sub) throws PrintException {
