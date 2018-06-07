@@ -18,3 +18,8 @@ To **connect** to container :
 The tomcat user and login details are in the docker logs
 
 sudo docker logs [CONTAINER ID]
+
+
+## To View
+
+[http://uhlbriccsdev:8080/briccs-labels-webapp-1.05/]
